@@ -1,0 +1,151 @@
+/* RESET E BASE */
+body {
+  background: #fff0f5;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+/* CONTAINER */
+.modal {
+  position: relative;
+  background: #ffffff;
+  border-radius: 30px;
+  padding: 5rem 4rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  max-width: 1000px;
+  min-height: 450px; /* aumenta verticalmente */
+  border: 5px solid #ff99cc;
+  box-shadow: 0 0 30px rgba(255, 182, 193, 0.3);
+  animation: fadeInUp 1s ease forwards;
+  opacity: 0;
+}
+
+
+
+/* FOTO */
+.foto {
+  opacity: 0;
+  animation: slideInLeft 1s ease 0.3s forwards;
+}
+
+.foto img {
+  width: 280px;
+  height: 280px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 10px 30px rgba(255, 182, 193, 0.4);
+}
+
+/* TEXTO */
+.texto {
+  max-width: 55%;
+  margin-left: 2rem;
+  opacity: 0;
+  animation: slideInRight 1s ease 0.5s forwards;
+}
+
+.texto h1 {
+  font-size: 2.5rem;
+  color: #ff69b4;
+  margin-bottom: 1rem;
+}
+
+.texto p {
+  color: #cc6699;
+  font-size: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+/* BOTÃO */
+.botao {
+  background-color: #ff69b4;
+  color: white;
+  padding: 0.8rem 1.6rem;
+  border: none;
+  border-radius: 999px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(255, 105, 180, 0.4);
+  text-decoration: none;
+}
+
+.botao:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(255, 105, 180, 0.5);
+}
+
+/* ANIMAÇÕES */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* NOVO: alinha imagem e texto lado a lado */
+.content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap; /* adapta em telas pequenas */
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+
+  .texto {
+    margin-left: 0;
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .foto img {
+    width: 200px;
+    height: 200px;
+  }
+}
+.texto {
+  max-width: 55%;
+  margin-left: 3rem; /* antes era 2rem */
+  opacity: 0;
+  animation: slideInRight 1s ease 0.5s forwards;
+}
+
